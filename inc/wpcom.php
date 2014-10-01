@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package _s
+ * @package Marti & Liz
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function _s_wpcom_setup() {
+function marti_and_lizwpcom_setup() {
 
 	global $themecolors;
 
@@ -29,5 +29,5 @@ function _s_wpcom_setup() {
 	
 	}
 
-} // _s_wpcom_setup()
-add_action( 'after_setup_theme', '_s_wpcom_setup' );
+} // marti_and_lizwpcom_setup()
+add_action( 'after_setup_theme', 'marti_and_lizwpcom_setup' );

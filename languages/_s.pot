@@ -1,9 +1,9 @@
-# Copyright (C) 2014 Automattic
+# Copyright (C) 2014 Slushman
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0-wpcom\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"Project-Id-Version:'marti-and-liz'1.0-wpcom\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/marti-and-liz\n"
 "POT-Creation-Date: 2014-09-11 00:43:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -241,7 +241,7 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 #. Theme Name of the plugin/theme
-msgid "_s"
+msgid "marti-and-liz"
 msgstr ""
 
 #. Theme URI of the plugin/theme
@@ -249,13 +249,13 @@ msgid "http://underscores.me/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
+msgid "Hi. I'm a starter theme called <code>marti-and-liz</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Automattic"
+msgid "Slushman"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://automattic.com/"
+msgid "http://slushman.com/"
 msgstr ""

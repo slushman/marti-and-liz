@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package Marti & Liz
  */
 ?>
 
@@ -16,7 +16,7 @@
 		if ( 'post' == get_post_type() ) :
 			?><div class="entry-meta"><?php
 
-				_s_posted_on();
+				marti_and_lizposted_on();
 		
 			?></div><!-- .entry-meta --><?php
 
@@ -32,7 +32,7 @@
 
 	<footer class="entry-footer"><?php
 
-		_s_entry_footer();
+		marti_and_lizentry_footer();
 	
 	?></footer><!-- .entry-footer -->
 </article><!-- #post-## -->

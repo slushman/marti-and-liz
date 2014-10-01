@@ -3,7 +3,7 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package _s
+ * @package Marti & Liz
  */
 
 /**
@@ -12,12 +12,12 @@
  * 
  * @uses 	add_theme_support()
  */
-function _s_jetpack_setup() {
+function marti_and_lizjetpack_setup() {
 
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'footer'    => 'page',
 	) );
 
-} // _s_jetpack_setup()
-add_action( 'after_setup_theme', '_s_jetpack_setup' );
+} // marti_and_lizjetpack_setup()
+add_action( 'after_setup_theme', 'marti_and_lizjetpack_setup' );

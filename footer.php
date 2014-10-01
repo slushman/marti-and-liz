@@ -4,11 +4,10 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package _s
+ * @package Marti & Liz
  */
-?>
 
-	</div><!-- #content -->
+?></div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 
