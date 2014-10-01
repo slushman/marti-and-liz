@@ -28,7 +28,7 @@ function marti_and_liz_setup() {
 	 * If you're building a theme based onMarti & Liz, use a find and replace
 	 * to change'marti-and-liz'to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( marti-and-liz, get_template_directory() . '/languages' );
+	load_theme_textdomain( 'marti-and-liz', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
