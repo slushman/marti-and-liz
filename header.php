@@ -30,7 +30,7 @@ wp_head();
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Primary Menu','marti-and-liz'); ?></button><?php
+			<button class="menu-toggle"><?php _e( 'Menu','marti-and-liz'); ?></button><?php
 
 				wp_nav_menu( array( 'theme_location' => 'primary' ) );
 		

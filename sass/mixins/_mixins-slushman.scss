@@ -55,19 +55,6 @@
 }
 
 /**
- * Default styling for headers
- */
-@mixin headers() {
-	border			: 0;
-	font-style		: inherit;
-	font-weight		: inherit;
-	margin			: 0;
-	padding			: 0;
-	vertical-align	: baseline;
-	clear			: both;
-}
-
-/**
  * Hides text
  */
 @mixin hidetext() {
