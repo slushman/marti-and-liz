@@ -8,6 +8,13 @@
 }
 
 /* Search widget */
-.widget_search .search-submit {
-	display: none;
+.widget_search {
+
+	.search-submit {
+		display: none;
+	}
+
+	.search-field {
+		width: 100%;
+	}
 }

@@ -1,6 +1,7 @@
-.site-header {
-	overflow		: auto;
-	margin-bottom	: $size__default-bot-marg;
+@media only screen and (max-width: $bp__menu-button+1) {
+	.site-header {
+		overflow: auto;
+	}
 }
 
 .site-branding {

@@ -14,14 +14,14 @@
 @import "primary/comments";
 
 /*--------------------------------------------------------------
-10.4 Layouts
---------------------------------------------------------------*/
-@import "../layout/content-sidebar";
-@import "../layout/sidebar-content";
-
-/*--------------------------------------------------------------
-10.5 Page Parts
+10.4 Page Parts
 --------------------------------------------------------------*/
 @import "global/header";
 @import "global/content";
 @import "global/footer";
+
+/*--------------------------------------------------------------
+10.5 Layouts
+--------------------------------------------------------------*/
+@import "../layout/content-sidebar";
+@import "../layout/sidebar-content";
