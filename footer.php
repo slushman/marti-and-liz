@@ -13,7 +13,7 @@
 
 		<div class="footer-wrap">
 
-			<div class="footer_left"><?php
+			<div class="footer-left"><?php
 
 				do_action( 'footer_left' );
 
@@ -23,7 +23,7 @@
 				do_action( 'site_info' );
 
 			?></div><!-- .site-info -->
-			<div class="site-info"><?php
+			<div class="footer-right"><?php
 
 				do_action( 'footer_right' );
 

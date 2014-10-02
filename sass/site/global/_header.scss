@@ -5,5 +5,11 @@
 }
 
 .site-branding {
-	padding: 1em;
+	padding		: 1em;
+	margin		: 0 auto;
+	max-width	: $size__max-width;
+}
+
+.site-title {
+	text-align: center;
 }

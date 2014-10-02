@@ -9,6 +9,7 @@
 		list-style	: none;
 		margin		: 0;
 		padding-left: 0;
+		display 	: inline-block;
 
 		ul {
 			display		: inherit;
@@ -104,6 +105,14 @@
 		}
 	}
 }
+
+// Center Menu
+.menu-default-container {
+	max-width	: $size__max-width;
+	margin		: 0 auto;
+	text-align	: center;
+}
+
 
 /* Small menu */
 .menu-toggle {

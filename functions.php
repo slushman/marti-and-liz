@@ -148,7 +148,7 @@ add_action( 'init', 'register_social_menu' );
  */
 function custom_footer_left() {
 
-	// Footer left
+	// 
 
 } // custom_footer_left()
 add_action( 'footer_left', 'custom_footer_left' );
@@ -162,7 +162,7 @@ add_action( 'site_info', 'custom_site_info' );
 
 function custom_footer_right() {
 
-	// Footer right
+	//
 
 } // custom_footer_right()
 add_action( 'footer_right', 'custom_footer_right' );
