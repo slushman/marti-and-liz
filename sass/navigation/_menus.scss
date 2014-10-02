@@ -1,8 +1,8 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	clear	: both;
+	display	: block;
+	float	: left;
+	width	: 100%;
 
 	ul {
 		list-style: none;
@@ -44,8 +44,12 @@
 		}
 	}
 	li {
-		float: left;
-		position: relative;
+		padding: 0.5em 1em;
+
+		@media only screen and (min-width: $bp__menu-button+1) {	
+			float: left;
+			position: relative;
+		}
 
 		&:hover > a {
 		}
@@ -66,7 +70,7 @@
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: $bp__menu-button) {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;
@@ -77,6 +81,7 @@
 		box-shadow: none;
 		border-radius: 0;
 		text-shadow: none;
+		background: $color__menu-button;
 
 		&:hover {
 			border: none;
