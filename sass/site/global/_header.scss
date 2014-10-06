@@ -1,5 +1,8 @@
-@media only screen and (max-width: $bp__menu-button+1) {
-	.site-header {
+.site-header {
+	max-width	: $size__max-width;
+	margin		: 0 auto;
+
+	@media only screen and (max-width: $bp__menu-button+1) {
 		overflow: auto;
 	}
 }
@@ -7,9 +10,54 @@
 .site-branding {
 	padding		: 1em;
 	margin		: 0 auto;
-	max-width	: $size__max-width;
+	max-width	: $size__logo-max-width;
+	overflow 	: auto;
+
+	@media only screen and (min-width: $bp__menu-button) {
+		max-width: $bp__menu-button - 25px;
+	}
+
+	@media only screen and (min-width: $bp__laptop) {
+		float	: left;
+		margin	: 0 2.5em;
+	}
 }
 
 .site-title {
-	text-align: center;
+	text-align	: center;
+	max-width 	: $size__logo-max-width;
+	margin		: 0 auto;
+
+	@media only screen and (min-width: $bp__menu-button) {
+		float 	: left;
+		width 	: $size__logo-max-width;
+	}
+}
+
+.brands {
+	overflow: auto;
+
+	@media only screen and (min-width: $bp__menu-button) {
+		padding: 1.5em 0 1em 1em;
+	}
+
+	.left {
+		float	: left;
+		margin	: 0;
+
+		@media only screen and (min-width: $bp__menu-button) {
+			float: inherit;
+		}
+	}
+
+	.right {
+		float		: right;
+		text-align	: right;
+		margin 		: 0;
+
+		@media only screen and (min-width: $bp__menu-button) {
+			float		: inherit;
+			text-align	: inherit;
+		}
+	}
 }

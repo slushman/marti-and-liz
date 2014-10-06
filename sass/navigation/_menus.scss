@@ -5,6 +5,13 @@
 	width			: 100%;
 	margin-bottom	: $size__default-bot-marg;
 
+	@media only screen and (min-width: $bp__laptop) {
+		clear		: none;
+		width		: inherit;
+		margin-top	: 4em;
+		margin-left	: 1em;
+	}
+
 	ul {
 		list-style	: none;
 		margin		: 0;
