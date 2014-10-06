@@ -20,7 +20,7 @@
 
 		ul {
 			display		: inherit;
-			background	: $color__bg-menu-item;
+			background	: $color__bg-menu-item-mobile;
 
 			@media only screen and (min-width: $bp__menu-button+1) {	
 				box-shadow	: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -36,9 +36,15 @@
 				}
 
 				li {
+					text-align: left;
+
 					&:hover > ul {
 						left: 100%;
 					}
+				}
+
+				a {
+					color: $color__text-submenu;
 				}
 			}
 
@@ -91,7 +97,11 @@
 	a {
 		display			: block;
 		text-decoration	: none;
-		color 			: $color__text-menu;
+		color 			: $color__text-menu-mobile;
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			color: $color__text-menu;
+		}
 	}
 
 	.current_page_item,
@@ -108,7 +118,7 @@
 		}
 
 		&:hover > a {
-			color: $color__text-menu-current;
+			color: $color__text-menu-current-hover;
 		}
 	}
 }
@@ -138,10 +148,15 @@
 		border-radius	: 0;
 		text-shadow		: none;
 		background		: $color__bg-menu-button;
+		color 			: $color__text-menu-button;
 
 		&:hover {
 			border		: none;
 			box-shadow	: none;
+		}
+
+		li {
+			text-align 		: left;
 		}
 	}
 
