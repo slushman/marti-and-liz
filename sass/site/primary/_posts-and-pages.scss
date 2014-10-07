@@ -3,7 +3,7 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 $size__default-bot-marg;
 }
 
 .byline,
@@ -24,5 +24,5 @@
 
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: 0 0 $size__default-bot-marg;
 }
