@@ -54,6 +54,17 @@
 	margin-right: $marginperc;
 }
 
+@mixin fonticon( $font: "" ) {
+	content: $font;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: inherit;
+	font-family: FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
 /**
  * Hides text
  */

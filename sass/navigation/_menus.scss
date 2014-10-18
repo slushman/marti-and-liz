@@ -121,6 +121,28 @@
 			color: $color__text-menu-current-hover;
 		}
 	}
+
+	.menu-item-has-children {
+
+		a {
+
+			@media only screen and (min-width: $bp__menu-button+1) {
+
+				&:after {
+					@include fonticon( "\f0d7" );
+					margin-left: 0.5em;
+				}
+			}
+		}
+
+		ul {
+			a {
+				&:after {
+					content: "";
+				}
+			}
+		}
+	}
 }
 
 // Center Menu
