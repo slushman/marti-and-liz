@@ -1,0 +1,21 @@
+.nav-social {
+
+	.screen-reader-text,
+	a {
+		@include hidetext();
+	}
+
+	.menu-items {
+		list-style 	: none;
+		margin 		: 0;
+
+		.menu-item {
+			display 	: inline-block;
+		} 
+	}
+
+	.fa:before {
+		color 		: $color__text-social;
+		font-size 	: $font__size-social;
+	}
+}

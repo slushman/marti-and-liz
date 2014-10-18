@@ -1,5 +1,13 @@
 .site-footer {
+	background 	: $color__bg-footer;
+	color 		: $color__text-footer;
 	@include grid-column(12);
+	padding 	: 1em;
+
+	a,
+	a:visited {
+		color: $color__text-footer-links
+	}
 }
 
 .footer-wrap {

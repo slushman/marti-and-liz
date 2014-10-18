@@ -42,7 +42,8 @@ function marti_and_liz_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu','marti-and-liz'),
+		'primary' => __( 'Primary Menu','marti-and-liz' ),
+		'social' => __( 'Social Links','marti-and-liz' )
 	) );
 
 	/*
@@ -77,13 +78,22 @@ add_action( 'after_setup_theme', 'marti_and_liz_setup' );
  */
 function marti_and_liz_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar','marti-and-liz'),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+			'name'			=> __( 'Sidebar','marti-and-liz'),
+			'id'			=> 'sidebar-1',
+			'description'	=> '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'	=> '</aside>',
+			'before_title'	=> '<h1 class="widget-title"><span>',
+			'after_title'	=> '</span></h1>',
+	) );
+	register_sidebar( array(
+			'name'			=> __( 'Footer Left','marti-and-liz'),
+			'id'			=> 'footer-left',
+			'description'	=> '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'	=> '</aside>',
+			'before_title'	=> '<h1 class="widget-title">',
+			'after_title'	=> '</h1>',
 	) );
 }
 add_action( 'widgets_init', 'marti_and_liz_widgets_init' );
@@ -129,40 +139,40 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
-
-/**
- * Social Menu
- */
-function register_social_menu() {
-
-	register_nav_menu( 'social', __( 'Social','marti-and-liz') );
-
-} // register_social_menu()
-add_action( 'init', 'register_social_menu' );
-
-
-
 /**
  * Customize footer
  */
 function custom_footer_left() {
 
-	// 
+	dynamic_sidebar( 'footer-left' );
 
 } // custom_footer_left()
 add_action( 'footer_left', 'custom_footer_left' );
 
 function custom_site_info() {
 
-	printf( __( '<div class="copyright">All content &copy %1$s &nbsp; <a href="%2$s" title="Login">%3$s</a></a></div>','marti-and-liz'), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
+	printf( __( '<div class="copyright">&copy %1$s <a href="%2$s" title="Login">%3$s</a></a></div>', 'marti-and-liz' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
+	echo '123 ABC St<br />Nashville, TN 37201<br />';
+	printf( __( '<a href="tel:%1$s">%1$s</a>' , 'marti-and-liz' ), '615-555-5555' );
 
 } // custom_site_info()
 add_action( 'site_info', 'custom_site_info' );
 
 function custom_footer_right() {
 
-	//
+	get_template_part( 'menu', 'social' );
 
 } // custom_footer_right()
 add_action( 'footer_right', 'custom_footer_right' );
+
+
+/**
+ * Load Fonts
+ */
+function load_fonts() {
+
+	wp_register_style( 'fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'fontawesome' );	
+
+} // load_fonts()
+add_action( 'wp_print_styles', 'load_fonts' );

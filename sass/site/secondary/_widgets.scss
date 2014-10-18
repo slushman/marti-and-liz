@@ -1,9 +1,50 @@
 .widget {
-	margin: 0 0 $size__default-bot-marg;
+	margin: 0 0 $size__default-bot-marg*2;
 
 	/* Make sure select elements fit in widgets */
 	select {
 		max-width: 100%;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	li {
+		margin-bottom: 1em;
+	}
+
+	a,
+	a:visited {
+		color: $color__text-widget-links;
+		text-decoration: none;
+	}
+
+}
+
+.widget-title {
+	text-align: center;
+	position: relative;
+	color: $color__text-widget-title;
+	margin-bottom: 1em;
+
+	&:before {
+		border-top: 2px solid $color__border-widget-title;
+		content:"";
+		margin: 0 auto;
+		width: 95%;
+		z-index: -1;
+		position: absolute;
+		top: 0.7em;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	span {
+		background: $color__bg-widget-title;
+		padding: 0 0.5em;
+		content: "";
 	}
 }
 

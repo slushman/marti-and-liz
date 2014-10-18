@@ -2,7 +2,7 @@ $light	: #fff;
 $med	: #ccc;
 $dark	: #020202;
 $red	: #e21a23;
-$gray 	: #939597;
+$gray 	: #6D6E70;
 
 // Backgrounds
 $color__background-body		: $light;
@@ -11,6 +11,8 @@ $color__background-hr		: $gray;
 $color__background-button	: #e6e6e6;
 $color__background-pre		: #eee;
 $color__background-ins		: lighten( $red, 30% );
+$color__bg-footer 			: $gray;
+$color__bg-widget-title 	: $light;
 
 // Text colors
 $color__text-screen			: #21759b;
@@ -20,6 +22,11 @@ $color__link				: $red;
 $color__link-visited		: darken( $red, 10% );
 $color__link-hover			: $gray;
 $color__text-main			: $dark;
+$color__text-footer 		: $light;
+$color__text-footer-links 	: $light;
+$color__text-social 		: $light;
+$color__text-widget-title 	: $gray;
+$color__text-widget-links 	: $dark;
 
 // Border colors
 $color__border-button		: $gray $gray #bbb;
@@ -27,6 +34,7 @@ $color__border-button-hover	: $gray #bbb #aaa;
 $color__border-button-focus	: #aaa #bbb #bbb;
 $color__border-input		: $gray;
 $color__border-abbr			: #666;
+$color__border-widget-title : $red;
 
 // Menu colors
 $color__bg-menu-button			: $red;

@@ -61,6 +61,20 @@
 	text-indent	: 100%;
 	overflow	: hidden;
 	white-space	: nowrap;
+	font-size 	: 0;
+}
+
+/**
+ * Sets the opacity
+ * 
+ * @param 	$opacity 	The amount of opacity you want, default: 0.5
+ */
+@mixin opacity( $opacity: 0.5 ) {
+
+	$ms: $opacity * 100;
+
+	filter 	: Alpha(opacity=$ms);
+	opacity : $opacity;
 }
 
 /**
