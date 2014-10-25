@@ -4,12 +4,17 @@
 	float			: left;
 	width			: 100%;
 	margin-bottom	: $size__default-bot-marg;
+	font-family 	: $font__sans;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		font-size 	: $font__size-main-menu;
+	}
 
 	@media only screen and (min-width: $bp__laptop) {
 		clear		: none;
 		width		: inherit;
-		margin-top	: 4em;
-		margin-left	: 1em;
+		margin-top	: 62px;
+		float 		: right;
 	}
 
 	ul {
@@ -19,8 +24,7 @@
 		text-align 	: center;
 
 		ul {
-			display		: inherit;
-			background	: $color__bg-menu-item-mobile;
+			display: inherit;
 
 			@media only screen and (min-width: $bp__menu-button+1) {	
 				box-shadow	: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -29,6 +33,7 @@
 				top			: 2.5em;
 				left		: -999em;
 				z-index		: 99999;
+				background 	: $color__bg-submenu;
 
 				ul {
 					left: -999em;
@@ -46,10 +51,25 @@
 				a {
 					color: $color__text-submenu;
 				}
+			} // breakpoint
+
+			ul {
+				a {
+					@media only screen and (max-width: $bp__menu-button) {
+						padding: 0.5em 3em;
+						border-left: none;
+					}
+				}
 			}
 
 			a {
-				width: 200px;
+				@media only screen and (max-width: $bp__menu-button) {
+					padding: 0.5em 2em;
+				}
+
+				@media only screen and (min-width: $bp__menu-button+1) {
+					width: 200px;
+				}
 			}
 
 			:hover > a {
@@ -61,31 +81,37 @@
 			@media only screen and (max-width: $bp__menu-button) {
 				li {
 
-					&:first-child {
-						padding-top: 1em;
-					}
-
 					&:last-child {
 						padding-bottom: 0;
 					}
 				}
 			}
-		}
+		} // .submenu ul
 
 		li:hover > ul {
 			left: 0;
 		}
-	}
+
+	} // first-level ul
+
 	li {
-		padding: 0.5em 1em;
 
 		@media only screen and (min-width: $bp__menu-button+1) {	
 			display 	: inline-block;
 			position 	: relative;
 		}
 
+		&:hover {
+			
+		}
+
 		&:hover > a {
-			color: $color__text-menu-hover;
+			background 	: $color__bg-menu-item-mobile;
+			color 		: $color__text-menu-mobile-hover;
+
+			@media only screen and (min-width: $bp__menu-button+1) {
+				color: $color__text-menu-hover;
+			}
 		}
 
 		@media only screen and (min-width: $bp__menu-button+1) {
@@ -95,12 +121,17 @@
 		}
 	}
 	a {
+		padding 		: 0.5em 1em;
 		display			: block;
 		text-decoration	: none;
 		color 			: $color__text-menu-mobile;
 
 		@media only screen and (min-width: $bp__menu-button+1) {
 			color: $color__text-menu;
+		}
+
+		&:hover {
+
 		}
 	}
 
@@ -169,8 +200,9 @@
 		box-shadow		: none;
 		border-radius	: 0;
 		text-shadow		: none;
-		background		: $color__bg-menu-button;
-		color 			: $color__text-menu-button;
+		background		: $color__bg-menu-mobile;
+		color 			: $color__text-menu-mobile;
+		font-family 	: $font__sans;
 
 		&:hover {
 			border		: none;

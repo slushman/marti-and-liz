@@ -2,6 +2,19 @@
 	margin-bottom: $size__default-bot-marg;
 	@include grid-row();
 	max-width: $size__max-width;
+
+	.entry-title {
+		color 		: $color__text-entry-title;
+		font-family : $font__sans;
+	}
+
+	.entry-content {
+		margin 	: 0;
+	}
+}
+
+#wrap #content {
+	padding: 1em;
 }
 
 .content-area {

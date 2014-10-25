@@ -17,6 +17,17 @@
 
 .footer-left {
 	@include grid-column(12);
+	margin-bottom 	: $size__default-bot-marg;
+
+	.widget {
+		margin: 0;
+	}
+
+	.widget-title {
+		font-size 		: 24px;
+		margin-bottom 	: 0;
+		color 			: $color__text-footer;
+	}
 
 	@media only screen and (min-width: $bp__tablet) {
 		@include grid-column(3);
@@ -26,6 +37,7 @@
 .site-info {
 	text-align: center;
 	@include grid-column(12);
+	margin-bottom 	: $size__default-bot-marg;
 
 	@media only screen and (min-width: $bp__tablet) {
 		@include grid-column(6);
@@ -34,6 +46,7 @@
 
 .footer-right {
 	@include grid-column(12);
+	margin-bottom 	: $size__default-bot-marg;
 
 	@media only screen and (min-width: $bp__tablet) {
 		@include grid-column(3);

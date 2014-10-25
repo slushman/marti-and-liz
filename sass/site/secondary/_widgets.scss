@@ -16,36 +16,37 @@
 
 	a,
 	a:visited {
-		color: $color__text-widget-links;
-		text-decoration: none;
+		color 			: $color__text-widget-links;
+		text-decoration : none;
 	}
 
 }
 
 .widget-title {
-	text-align: center;
-	position: relative;
-	color: $color__text-widget-title;
-	margin-bottom: 1em;
+	text-align 		: center;
+	position 		: relative;
+	color 			: $color__text-widget-title;
+	margin-bottom 	: 1em;
 
 	&:before {
-		border-top: 2px solid $color__border-widget-title;
-		content:"";
-		margin: 0 auto;
-		width: 95%;
-		z-index: -1;
-		position: absolute;
-		top: 0.7em;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		border-top 	: 2px solid $color__border-widget-title;
+		content 	:"";
+		margin 		: 0 auto;
+		width 		: 95%;
+		z-index 	: -1;
+		position	: absolute;
+		top 		: 32px;
+		bottom 		: 0;
+		left 		: 0;
+		right 		: 0;
 	}
 
 	span {
-		background: $color__bg-widget-title;
-		padding: 0 0.5em;
-		content: "";
-	}
+		background 	: $color__bg-widget-title;
+		padding 	: 0 0.5em;
+		content 	: "";
+		font-size 	: 28px;
+	} 
 }
 
 /* Search widget */

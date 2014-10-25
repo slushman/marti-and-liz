@@ -1,0 +1,47 @@
+.home {
+
+	.map_wrap {
+		padding-bottom 	: 300px;
+		background 		: gray;
+		margin-bottom 	: $size__default-bot-marg;
+	}
+
+	.promo_wrap {
+
+	}
+
+	.promo {
+		padding-bottom 	: 175px;
+		background 		: gray;
+		margin-bottom 	: $size__default-bot-marg;
+	}
+
+	#promo1 {
+
+	}
+
+	#promo2 {
+		
+	}
+
+	#promo3 {
+		
+	}
+
+	.news_wrap {
+		margin-bottom 	: $size__default-bot-marg;
+
+		.entry-content {
+			margin-top: 0;
+		}
+		.entry-title a {
+			text-decoration: none;
+		}
+	}
+
+	.promo_title,
+	.news_title {
+		font-family 	: $font__sans;
+		text-transform 	: uppercase;
+	}
+}
