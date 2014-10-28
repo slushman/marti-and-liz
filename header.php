@@ -40,4 +40,5 @@ wp_head();
 		?></nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content row">
+	<div id="wrap">
+		<div id="content" class="site-content">

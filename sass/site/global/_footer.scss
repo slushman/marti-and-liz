@@ -1,7 +1,7 @@
 .site-footer {
 	background 	: $color__bg-footer;
 	color 		: $color__text-footer;
-	@include grid-column(12);
+	width 		: 100%;
 	padding 	: 1em;
 
 	a,
@@ -11,12 +11,12 @@
 }
 
 .footer-wrap {
-	max-width: $size__max-width;
-	margin: 0 auto;
+	max-width 	: $size__max-width;
+	margin 		: 0 auto;
 }
 
 .footer-left {
-	@include grid-column(12);
+	width 			: 100%;
 	margin-bottom 	: $size__default-bot-marg;
 
 	.widget {
@@ -30,25 +30,32 @@
 	}
 
 	@media only screen and (min-width: $bp__tablet) {
-		@include grid-column(3);
+		width: 22%;
+		display : inline-block;
+		overflow: auto;
 	}
 }
 
 .site-info {
-	text-align: center;
-	@include grid-column(12);
+	text-align 		: center;
+	width 			: 100%;
 	margin-bottom 	: $size__default-bot-marg;
 
 	@media only screen and (min-width: $bp__tablet) {
-		@include grid-column(6);
+		margin 	: 0 2.5%;
+		width 	: 50%;
+		display : inline-block;
+		overflow: auto;
 	}
 }
 
 .footer-right {
-	@include grid-column(12);
+	width 			: 100%;
 	margin-bottom 	: $size__default-bot-marg;
 
 	@media only screen and (min-width: $bp__tablet) {
-		@include grid-column(3);
+		width: 22%;
+		display : inline-block;
+		overflow: auto;
 	}
 }

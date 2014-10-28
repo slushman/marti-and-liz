@@ -7,7 +7,8 @@
  * @package Marti & Liz
  */
 
-?></div><!-- #content -->
+		?></div><!-- #content -->
+	</div><!-- #wrap -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 

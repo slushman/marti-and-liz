@@ -1,19 +1,42 @@
 .home {
 
+	.site-content {
+		margin: 0 auto 1.5em;
+	}
+
+	.content-area {
+		width: 100%;
+	}
+
+	.site-main {
+		padding: 1em;
+	}
+
 	.map_wrap {
 		padding-bottom 	: 300px;
 		background 		: gray;
 		margin-bottom 	: $size__default-bot-marg;
+
+		@media only screen and (min-width: $bp__tablet) {
+			padding-bottom : 500px;
+		}
 	}
 
 	.promo_wrap {
-
+		@media only screen and (min-width: $bp__tablet) {
+			width: 47.5%;
+			float: left;
+		}
 	}
 
 	.promo {
 		padding-bottom 	: 175px;
 		background 		: gray;
 		margin-bottom 	: $size__default-bot-marg;
+
+		@media only screen and (min-width: $bp__tablet) {
+			padding-bottom : 320px;
+		}
 	}
 
 	#promo1 {
@@ -30,6 +53,11 @@
 
 	.news_wrap {
 		margin-bottom 	: $size__default-bot-marg;
+
+		@media only screen and (min-width: $bp__tablet) {
+			width: 47.5%;
+			float: right;
+		}
 
 		.entry-content {
 			margin-top: 0;
