@@ -13,6 +13,7 @@ $color__background-pre		: #eee;
 $color__background-ins		: lighten( $red, 30% );
 $color__bg-footer 			: $gray;
 $color__bg-widget-title 	: $light;
+$color__bg-map-search 		: $red;
 
 // Text colors
 $color__text-screen			: #21759b;
@@ -28,6 +29,7 @@ $color__text-social 		: $light;
 $color__text-widget-title 	: $gray;
 $color__text-widget-links 	: $dark;
 $color__text-entry-title 	: $red;
+$color__text-map-search 	: $light;
 
 // Border colors
 $color__border-button		: $gray $gray #bbb;

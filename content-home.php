@@ -16,7 +16,7 @@ get_header();
 			<main id="main" class="site-main" role="main">
 				<div class="map_wrap"><?php
 
-					// get_search_and_map();
+					echo do_shortcode( '[wpgmza id="1"]' );
 				
 				?></div><!-- .map_wrap -->
 				<div class="promo_wrap">

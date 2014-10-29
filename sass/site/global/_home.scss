@@ -8,18 +8,46 @@
 		width: 100%;
 	}
 
-	.site-main {
-		padding: 1em;
+	.map_wrap {
+		margin-bottom 	: $size__default-bot-marg;
+		overflow 		: auto;
+		position 		: relative;
 	}
 
-	.map_wrap {
-		padding-bottom 	: 300px;
-		background 		: gray;
-		margin-bottom 	: $size__default-bot-marg;
+	.wpgmza_sl_radius_div,
+	select#locationSelect {
+		display: none;
+	}
 
-		@media only screen and (min-width: $bp__tablet) {
-			padding-bottom : 500px;
-		}
+	.wpgmza_sl_main_div {
+		padding 	: 0.5em;
+		width 		: 400px;
+		position 	: absolute;
+		z-index 	: 1;
+		background 	: $color__bg-map-search;
+		color 		: $color__text-map-search;
+	}
+
+	.wpgmza_sl_query_innerdiv1,
+	.wpgmza_sl_query_innerdiv2,
+	.wpgmza_sl_query_div,
+	.wpgmza_sl_search_button {
+		display : inline-block;
+		float 	: none;
+	}
+
+	.wpgmza_sl_query_innerdiv1,
+	.wpgmza_sl_query_innerdiv2 {
+		width 	: auto;
+		padding : 0 0.5em;
+	}
+
+	input.wpgmza_sl_search_button {
+		border 		: 2px solid white;
+		background 	: transparent;
+		box-shadow 	: none;
+		color 		: white;
+		text-shadow : none;
 	}
 
 	.promo_wrap {
