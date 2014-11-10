@@ -1,0 +1,61 @@
+.single-sm-location {
+
+	.store-name {
+		color: $color__text-entry-title;
+		text-align: center;
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			text-align: left;
+		}
+	}
+
+	h3 {
+		color: $color__text-entry-title;
+	}
+
+	.content-area {
+		width: 100%;
+	}
+
+	.store-location {
+		margin-bottom: $size__default-bot-marg;
+	}
+
+	.store-info {
+		@include storeblock();
+		margin-right: 4%;
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			width: 30%;
+		}
+
+		@media only screen and (min-width: $bp__tablet) {
+			width: 47.5%;
+		}
+	}
+
+	.store-map {
+		@include storeblock();
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			width: 65%;
+		}
+
+		@media only screen and (min-width: $bp__tablet) {
+			width: 47.5%;
+		}
+	}
+
+	.store-news {
+		@include storeblock();
+		margin-right: 4%;
+
+		.entry-title {
+			font-size: $font__store-news !important;
+		}
+	}
+
+	.store-photos {
+		@include storeblock();
+	}
+}

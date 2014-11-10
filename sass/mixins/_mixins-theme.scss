@@ -1,0 +1,9 @@
+@mixin storeblock() {
+	vertical-align: top;
+	margin-bottom: $size__default-bot-marg;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		width: 47.5%;
+		display: inline-block;
+	}
+}

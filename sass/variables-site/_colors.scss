@@ -17,7 +17,7 @@ $color__bg-map-search 		: $red;
 
 // Text colors
 $color__text-screen			: #21759b;
-$color__text-input			: #666;
+$color__text-input			: $gray;
 $color__text-input-focus	: #111;
 $color__link				: $red;
 $color__link-visited		: darken( $red, 10% );
@@ -35,7 +35,7 @@ $color__text-map-search 	: $light;
 $color__border-button		: $gray $gray #bbb;
 $color__border-button-hover	: $gray #bbb #aaa;
 $color__border-button-focus	: #aaa #bbb #bbb;
-$color__border-input		: $gray;
+$color__border-input		: $light;
 $color__border-abbr			: #666;
 $color__border-widget-title : $red;
 
