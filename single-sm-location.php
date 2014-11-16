@@ -22,13 +22,17 @@ global $simple_map;
 
 						echo $postmeta['location_address'][0] . '<br />' . $postmeta['location_address2'][0];
 						echo $postmeta['location_city'][0] . ', ' . $postmeta['location_state'][0] . ' ' . $postmeta['location_zip'][0] . '<br />';
-						echo $postmeta['location_phone'][0];
+						echo '<span class="telephone">' . get_svg( 'telephone' ) . '</span><a href="tel:' . $postmeta['location_phone'][0] . '" title="Call the ' . get_the_title() . ' store">' . $postmeta['location_phone'][0] . '</a>';
+
+						//pretty( $postmeta );
 
 					?></div>
 					<div class="entry-content">
 						<h3>Hours</h3><?php
 					
 						echo get_field( 'store_hours' );
+
+						//pretty( $postmeta );
 										
 					?></div><!-- .entry-content -->
 				</div>
@@ -44,7 +48,7 @@ global $simple_map;
 
 								if ( ! empty( $postmeta[$check][0] ) ) {
 
-									echo $postmeta[$check][0] . '+';
+									echo urlencode( $postmeta[$check][0] ) . '+';
 
 								}
 

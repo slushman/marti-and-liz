@@ -15,8 +15,17 @@
 		} 
 	}
 
-	.fa:before {
-		color 		: $color__text-social;
-		font-size 	: $font__size-social;
+	.icon-menu {
+
+		&:hover {
+			> svg {
+				fill: $color__svg-social-hover;
+			}
+		}
+
+		svg {
+			fill 	: $color__svg-social;
+			width 	: $font__size-social;
+		}
 	}
 }

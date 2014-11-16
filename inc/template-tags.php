@@ -39,6 +39,8 @@ if ( ! function_exists( 'marti_and_lizpaging_nav' ) ) :
 	} // marti_and_lizpaging_nav()
 endif;
 
+
+
 if ( ! function_exists( 'marti_and_lizpost_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
@@ -63,6 +65,8 @@ if ( ! function_exists( 'marti_and_lizpost_nav' ) ) :
 
 	} // marti_and_lizpost_nav()
 endif;
+
+
 
 if ( ! function_exists( 'marti_and_lizposted_on' ) ) :
 /**
@@ -95,7 +99,7 @@ if ( ! function_exists( 'marti_and_lizposted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			_x( 'Posted on %s', 'post date','marti-and-liz'),
+			_x( '%s', 'post date','marti-and-liz'),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -108,6 +112,8 @@ if ( ! function_exists( 'marti_and_lizposted_on' ) ) :
 
 	} // marti_and_lizposted_on()
 endif;
+
+
 
 if ( ! function_exists( 'marti_and_lizentry_footer' ) ) :
 /**
@@ -160,6 +166,8 @@ if ( ! function_exists( 'marti_and_lizentry_footer' ) ) :
 	} // marti_and_lizentry_footer()
 endif;
 
+
+
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -202,6 +210,8 @@ function marti_and_lizcategorized_blog() {
 	}
 
 } // marti_and_lizcategorized_blog()
+
+
 
 /**
  * Flush out the transients used in marti_and_lizcategorized_blog.

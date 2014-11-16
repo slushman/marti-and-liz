@@ -1,11 +1,19 @@
 .site-content {
-	margin-bottom 	: $size__default-bot-marg;
-	width 			: 100%;
+	width: 100%;
 
 	.entry-title {
-		color 		: $color__text-entry-title;
-		font-family : $font__sans;
-		line-height : 1em;
+		color 			: $color__text-entry-title;
+		font-family 	: $font__sans;
+		line-height 	: 1em;
+
+		a {
+			text-decoration : none; 
+		}
+	}
+
+	.entry-meta {
+		text-transform: uppercase;
+		margin-bottom: 0.75em;
 	}
 
 	.entry-content {
@@ -67,6 +75,8 @@
 }
 
 .map_wrap {
+	position: relative;
+
 	#results {
 		padding-bottom: 149px;
 	}
@@ -150,5 +160,13 @@
 	width: 100px;
 }
 
+.telephone {
 
+	svg {
+		width 		: 12px;
+		margin-right: 5px;
+		fill 		: $color__svg-telephone-link;
+	}
+
+}
 
