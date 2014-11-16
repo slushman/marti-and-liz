@@ -185,9 +185,6 @@ add_action( 'footer_right', 'custom_footer_right' );
  */
 function load_fonts() {
 
-	//wp_register_style( 'fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
-	//wp_enqueue_style( 'fontawesome' );
-
 	wp_register_style( 'et-googleFonts', 'http://fonts.googleapis.com/css?family=Muli' );
 	wp_enqueue_style( 'et-googleFonts' );
 
