@@ -16,45 +16,9 @@ get_header();
 			<main id="main" class="site-main" role="main">
 				<div class="map_wrap"><?php
 
-					echo do_shortcode( '[simplemap hide_list=true]' );
-				
+					echo do_shortcode( '[wpseo_storelocator]' );
+
 				?></div><!-- .map_wrap -->
-				<!-- <div class="promo_wrap">
-					<h2 class="promo_title"><?php echo get_field( 'promo_title' ); ?></h2>
-					<div class="promo" id="promo1"><?php
-
-						/*$field = get_field( 'promo_1' );  // ACF promo field 3
-
-						if ( ! empty( $field ) ) {
-
-							echo '<img src="' . $field . '" class="promo_img" />';
-
-						}*/
-
-					?></div>
-					<div class="promo" id="promo2"><?php
-
-						/*$field = get_field( 'promo_2' );  // ACF promo field 3
-
-						if ( ! empty( $field ) ) {
-
-							echo '<img src="' . $field . '" class="promo_img" />';
-
-						}*/
-
-					?></div>
-					<div class="promo" id="promo3"><?php
-
-						/*$field = get_field( 'promo_3' );  // ACF promo field 3
-
-						if ( ! empty( $field ) ) {
-
-							echo '<img src="' . $field . '" class="promo_img" />';
-
-						}*/
-
-					?></div>
-				</div><!-- .promo_wrap -->
 				<div class="news_wrap">
 					<h2 class="news_title"><?php echo get_field( 'news_title' ); ?></h2><?php
 

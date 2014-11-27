@@ -18,44 +18,59 @@ global $simple_map;
 				<div class="store-info">
 					<div class="store-location"><?php
 
+						//pretty( $postmeta );
+
 						the_title( '<h1 class="store-name">', '</h1>' );
 
-						echo $postmeta['location_address'][0] . '<br />' . $postmeta['location_address2'][0];
-						echo $postmeta['location_city'][0] . ', ' . $postmeta['location_state'][0] . ' ' . $postmeta['location_zip'][0] . '<br />';
-						echo '<a href="tel:' . $postmeta['location_phone'][0] . '" title="Call the ' . get_the_title() . ' store"><span class="telephone">' . get_svg( 'telephone' ) . '</span>' . $postmeta['location_phone'][0] . '</a>';
+						if( function_exists( 'wpseo_local_show_address' ) ) { 
 
+							$params['echo']  			= TRUE;
+							$params['hide_name'] 		= TRUE;
+							$params['show_country'] 	= FALSE;
+
+							wpseo_local_show_address( $params ); 
+
+						}
+
+						/*echo $postmeta['_wpseo_business_address'][0];
+						echo $postmeta['_wpseo_business_city'][0] . ', ' . $postmeta['_wpseo_business_state'][0] . ' ' . $postmeta['_wpseo_business_zipcode'][0] . '<br />';
+						echo '<a href="tel:' . $postmeta['location_phone'][0] . '" title="Call the ' . get_the_title() . ' store"><span class="telephone">' . get_svg( 'telephone' ) . '</span>' . $postmeta['location_phone'][0] . '</a>';
+*/
 						//pretty( $postmeta );
 
 					?></div>
 					<div class="entry-content">
 						<h3>Hours</h3><?php
+
+						if( function_exists( 'wpseo_local_show_opening_hours' ) ) { 
+
+							wpseo_local_show_opening_hours( array( 'echo' => true ) );  
+
+						}
 					
-						echo get_field( 'store_hours' );
+						//echo get_field( 'store_hours' );
 
 						//pretty( $postmeta );
 										
 					?></div><!-- .entry-content -->
 				</div>
-				<div class="store-map">
-					<iframe width="100%" height="450" frameborder="0" style="border:0"
-						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCGoLIeI3HPQWUMaJS1J-MxPPT_ydQYTbU&q=Marti+and+Liz+Shoes+<?php 
+				<div class="store-map"><?php
+				
+					if( function_exists( 'wpseo_local_show_map' ) ) {
+						
+						$params['echo'] 			= TRUE;
+						$params['height'] 			= '450px';
+						$params['id'] 				= get_the_ID();
+						$params['show_route'] 		= FALSE;
+						$params['show_route_label'] = FALSE;
+						$params['width'] 			= '450px';
+						$params['zoom']				= 14;
+						
+						wpseo_local_show_map( $params );
+					
+					}
 
-							$opts = array( 'address', 'address2', 'city', 'state', 'zip' );
-
-							foreach ( $opts as $opt ) {
-
-								$check = 'location_' . $opt;
-
-								if ( ! empty( $postmeta[$check][0] ) ) {
-
-									echo urlencode( $postmeta[$check][0] ) . '+';
-
-								}
-
-							} // foreach
-						?>">
-					</iframe>
-				</div><!-- .store-map -->
+				?></div><!-- .store-map -->
 
 				<div class="store-news">
 					<h2>Store News</h2><?php

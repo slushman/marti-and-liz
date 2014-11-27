@@ -12,9 +12,18 @@
 		margin-bottom 	: $size__default-bot-marg;
 		overflow 		: auto;
 		position 		: relative;
+
+		@media only screen and (max-width: $bp__menu-button) {
+			padding-bottom 	: 150px;
+		}
 	}
 
-	.wpgmza_sl_radius_div,
+
+
+/**
+ * ??? Styling
+ */
+/* 	.wpgmza_sl_radius_div,
 	select#locationSelect {
 		display: none;
 	}
@@ -48,59 +57,67 @@
 		box-shadow 	: none;
 		color 		: white;
 		text-shadow : none;
-	}
-
-	/* .promo_wrap {
-		@media only screen and (min-width: $bp__tablet) {
-			width: 47.5%;
-			float: left;
-		}
-	}
-
-	.promo {
-		padding-bottom 	: 175px;
-		background 		: gray;
-		margin-bottom 	: $size__default-bot-marg;
-
-		@media only screen and (min-width: $bp__tablet) {
-			padding-bottom : 320px;
-		}
-	}
-
-	#promo1 {
-
-	}
-
-	#promo2 {
-		
-	}
-
-	#promo3 {
-		
 	} */
 
-	/* .news_wrap {
-		margin-bottom 	: $size__default-bot-marg;
 
-		@media only screen and (min-width: $bp__tablet) {
-			width: 47.5%;
-			float: right;
+/**
+ * LocalSEO Store Locator Styling
+ */
+
+
+	#wpseo-storelocator-results {
+		display: none;
+	}
+
+	.wpseo-map-canvas {
+		height: 500px !important;
+	}
+
+	#wpseo-storelocator-form {
+		padding 	: 1em;
+		width 		: 190px;
+		position 	: absolute;
+		z-index 	: 1;
+		background 	: $color__bg-map-search;
+		color 		: $color__text-map-search;
+		text-align 	: center;
+
+		@media only screen and (max-width: $bp__menu-button) {	
+			width 	: 100%;
+			bottom 	: 0;
 		}
 
-		.entry-content {
-			margin-top: 0;
-		}
-		.entry-title a {
-			text-decoration: none;
-		}
-	} */
 
-	.promo_title,
+		input[type="text"] {
+			width: 100%;
+			border-radius: 0;
+		}
+
+		p {
+			margin-bottom: 1em;
+		}
+	}
+
+	.sl-submit {
+
+		input[type="submit"] {
+			border 			: 2px solid white;
+			background 		: transparent;
+			box-shadow 		: none;
+			color 			: $color__text-map-search;
+			text-shadow 	: none;
+			border-radius 	: 0;
+		}
+	}
+
+
+/**
+ * News Section Styling
+ */
 	.news_title {
 		font-family 	: $font__sans;
 		text-transform 	: uppercase;
 	}
-
 
 	.news_wrap {
 		width 			: 100%;
@@ -128,8 +145,5 @@
 			}
 		}
 	}
-
-
-
 
 }

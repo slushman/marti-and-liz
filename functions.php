@@ -118,6 +118,26 @@ function marti_and_liz_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'marti_and_liz_scripts' );
 
+
+/**
+ * Plugin Name: Enqueue jQuery in Footer
+ * Version:     0.0.1
+ * Plugin URI:  http://wpgrafie.de/836/
+ * Description: Prints jQuery in footer on front-end.
+ * Author:      Dominik Schilling
+ * Author URI:  http://wpgrafie.de/
+ */
+function ds_enqueue_jquery_in_footer( &$scripts ) {
+	 
+	if ( ! is_admin() ) {
+
+		$scripts->add_data( 'jquery', 'group', 1 );
+	
+	}
+
+} // ds_enqueue_jquery_in_footer()
+add_action( 'wp_default_scripts', 'ds_enqueue_jquery_in_footer' );
+
 /**
  * Enqueue scripts and styles within the admin
  */
@@ -168,6 +188,7 @@ function custom_site_info() {
 	printf( __( '<div class="copyright">&copy %1$s <a href="%2$s" title="Login">Beaty Shoes</a></a></div>', 'marti-and-liz' ), date( 'Y' ), get_admin_url() );
 	echo '1151 Taylor Place<br />Jamestown, TN 38556<br />';
 	printf( __( '<a href="tel:%1$s">%1$s</a>' , 'marti-and-liz' ), '(931) 879-8476' );
+	printf( __( '<br /><a href="%1$s">Terms & Conditions</a>', 'marti-and-liz' ), get_site_url() . '/web-site-terms-conditions-use' );
 
 } // custom_site_info()
 add_action( 'site_info', 'custom_site_info' );
@@ -263,6 +284,26 @@ add_filter( 'sm-single-location-default-template', 'blank_template', 10, 1 );
 
 
 
+
+/**
+ * Removes description from Map Markers
+ * 
+ * @param 	mixed 		$temp 		The current SimpleMap single location template
+ * 
+ * @return 	null
+ */
+function no_marker_description() {
+
+	return TRUE;
+
+} // blank_template()
+add_filter( 'sm-hide-bubble-description', 'no_marker_description' );
+
+
+
+
+
+
 /**
  * Creates a Post category when a SimpleMap Location is published
  * 
@@ -274,7 +315,7 @@ add_filter( 'sm-single-location-default-template', 'blank_template', 10, 1 );
  */
 function create_location_category( $post_id, $post, $update ) {
 
-	if ( 'sm-location' !== $post->post_type ) { return; }
+	if ( 'sm-location' !== $post->post_type || 'wpseo_locations' !== $post->post_type ) { return; }
 	if ( wp_is_post_revision( $post_id ) ) { return; }
 	if ( wp_is_post_autosave( $post_id ) ) { return; }
 
@@ -306,7 +347,7 @@ function remove_location_category( $postID ) {
 
 	$post = get_post( $postID );
 
-	if ( 'sm-location' !== $post->post_type ) { return; }
+	if ( 'sm-location' !== $post->post_type || 'wpseo_locations' !== $post->post_type ) { return; }
 
 	$term = get_term_by( 'slug', $post->post_name, 'category' );
 

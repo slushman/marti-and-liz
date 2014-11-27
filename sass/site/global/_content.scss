@@ -62,7 +62,6 @@
 }
 
 
-
 /**
  * Homepage Map
  */
@@ -74,13 +73,14 @@
 	}
 }
 
+/* 
 .map_wrap {
 	position: relative;
 
 	#results {
 		padding-bottom: 149px;
 	}
-}
+} */
 
 //form#location_search_form
 #map_search {
@@ -164,9 +164,9 @@
 
 	svg {
 		width 		: 12px;
+		height 		: 12px;
 		margin-right: 5px;
 		fill 		: $color__svg-telephone-link;
 	}
-
 }
 

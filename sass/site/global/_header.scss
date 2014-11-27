@@ -25,11 +25,13 @@
 .site-title {
 	text-align	: center;
 	max-width 	: $size__logo-max-width;
+	max-height 	: 130px;
 	margin		: 0 auto;
 
 	@media only screen and (min-width: $bp__menu-button) {
 		float 	: left;
 		width 	: $size__logo-max-width;
+		height 	: 130px;
 	}
 }
 

@@ -16,8 +16,7 @@
 }
 
 .footer-left {
-	width 			: 100%;
-	margin-bottom 	: $size__default-bot-marg;
+	@include footerbox();
 
 	.widget {
 		margin: 0;
@@ -31,21 +30,16 @@
 
 	@media only screen and (min-width: $bp__menu-button+1) {
 		width: 22%;
-		display : inline-block;
-		overflow: auto;
 	}
 }
 
 .site-info {
 	text-align 		: center;
-	width 			: 100%;
-	margin-bottom 	: $size__default-bot-marg;
+	@include footerbox();
 
 	@media only screen and (min-width: $bp__menu-button+1) {
-		margin 	: 0 2.5%;
-		width 	: 49.5%;
-		display : inline-block;
-		overflow: auto;
+		margin 			: 0 2.5%;
+		width 			: 49.5%;
 	}
 }
 
@@ -56,12 +50,9 @@
 }
 
 .footer-right {
-	width 			: 100%;
-	margin-bottom 	: $size__default-bot-marg;
+	@include footerbox();
 
 	@media only screen and (min-width: $bp__menu-button+1) {
 		width: 22%;
-		display : inline-block;
-		overflow: auto;
 	}
 }

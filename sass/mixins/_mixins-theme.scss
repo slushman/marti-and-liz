@@ -11,3 +11,14 @@
 		text-transform: uppercase;
 	}
 }
+
+@mixin footerbox {
+	width 			: 100%;
+	margin-bottom 	: $size__default-bot-marg;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		display 		: inline-block;
+		vertical-align 	: top;
+		overflow 		: auto;
+	}
+}
