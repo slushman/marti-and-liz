@@ -170,3 +170,44 @@
 	}
 }
 
+
+
+.wpseo-map-canvas {
+	height: 500px !important;
+}
+
+#wpseo-storelocator-form {
+	padding 	: 1em;
+	width 		: 190px;
+	position 	: absolute;
+	z-index 	: 1;
+	background 	: $color__bg-map-search;
+	color 		: $color__text-map-search;
+	text-align 	: center;
+
+	@media only screen and (max-width: $bp__menu-button) {	
+		width 	: 100%;
+		bottom 	: 0;
+	}
+
+
+	input[type="text"] {
+		width: 100%;
+	}
+
+	p {
+		margin-bottom: 1em;
+	}
+}
+
+.sl-submit {
+
+	input[type="submit"] {
+		border 			: 2px solid white;
+		background 		: transparent;
+		box-shadow 		: none;
+		color 			: $color__text-map-search;
+		text-shadow 	: none;
+	}
+}
+

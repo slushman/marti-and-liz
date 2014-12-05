@@ -59,6 +59,10 @@
 	.store-photos {
 		@include storeblock();
 	}
+
+	.gm-style-iw div {
+		width: 100% !important;
+	}
 }
 
 .wpseo-map-canvas {

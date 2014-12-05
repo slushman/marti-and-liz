@@ -13,8 +13,12 @@ get_header();
 
 	?><div id="wrap">
 		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
-				<div class="map_wrap"><?php
+			<main id="main" class="site-main" role="main"><?php
+
+
+				if ( function_exists( 'soliloquy' ) ) { soliloquy( 'home-page', 'slug' ); }
+
+				?><div class="map_wrap"><?php
 
 					echo do_shortcode( '[wpseo_storelocator]' );
 
@@ -22,7 +26,7 @@ get_header();
 				<div class="news_wrap">
 					<h2 class="news_title"><?php echo get_field( 'news_title' ); ?></h2><?php
 
-					$query = new WP_Query( array( 'posts_per_page' => 6 ) );
+					$query = new WP_Query( array( 'posts_per_page' => 3 ) );
 
 					if ( $query->have_posts() ) :
 
@@ -33,15 +37,6 @@ get_header();
 								<header class="entry-header"><?php
 									
 									the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
-
-									if ( 'post' == get_post_type() ) :
-										?><div class="entry-meta"><?php
-
-											marti_and_lizposted_on();
-									
-										?></div><!-- .entry-meta --><?php
-
-									endif;
 
 								?></header><!-- .entry-header -->
 								
@@ -64,8 +59,10 @@ get_header();
 
 					$query = '';
 
-				?></div><!-- .news_wrap -->
-			</main><!-- #main -->
+				?></div><!-- .news_wrap --><?php
+
+
+			?></main><!-- #main -->
 		</div><!-- #primary -->
 	</div><?php
 

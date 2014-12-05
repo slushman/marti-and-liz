@@ -16,49 +16,12 @@
 		@media only screen and (max-width: $bp__menu-button) {
 			padding-bottom 	: 150px;
 		}
+
+		@media only screen and (min-width: $bp__menu-button) {
+			width 	: 48%;
+			float 	: left;
+		}
 	}
-
-
-
-/**
- * ??? Styling
- */
-/* 	.wpgmza_sl_radius_div,
-	select#locationSelect {
-		display: none;
-	}
-
-	.wpgmza_sl_main_div {
-		padding 	: 0.5em;
-		width 		: 400px;
-		position 	: absolute;
-		z-index 	: 1;
-		background 	: $color__bg-map-search;
-		color 		: $color__text-map-search;
-	}
-
-	.wpgmza_sl_query_innerdiv1,
-	.wpgmza_sl_query_innerdiv2,
-	.wpgmza_sl_query_div,
-	.wpgmza_sl_search_button {
-		display : inline-block;
-		float 	: none;
-	}
-
-	.wpgmza_sl_query_innerdiv1,
-	.wpgmza_sl_query_innerdiv2 {
-		width 	: auto;
-		padding : 0 0.5em;
-	}
-
-	input.wpgmza_sl_search_button {
-		border 		: 2px solid white;
-		background 	: transparent;
-		box-shadow 	: none;
-		color 		: white;
-		text-shadow : none;
-	} */
-
 
 /**
  * LocalSEO Store Locator Styling
@@ -90,7 +53,6 @@
 
 		input[type="text"] {
 			width: 100%;
-			border-radius: 0;
 		}
 
 		p {
@@ -106,7 +68,6 @@
 			box-shadow 		: none;
 			color 			: $color__text-map-search;
 			text-shadow 	: none;
-			border-radius 	: 0;
 		}
 	}
 
@@ -117,33 +78,39 @@
 	.news_title {
 		font-family 	: $font__sans;
 		text-transform 	: uppercase;
+		display 		: none;
 	}
 
 	.news_wrap {
-		width 			: 100%;
+
+		@media only screen and (min-width: $bp__menu-button) {
+			width 	: 48%;
+			float 	: right;
+		}
 
 		.entry-content {
+			margin-top 	: 0;
+		}
+
+		.entry-summary {
 			margin-top: 0;
 		}
 
-		.entry-title a {
-			text-decoration: none;
+		.entry-title {
+			font-size: 30px;
+
+			a {
+				text-decoration: none;
+			}
 		}
 
 		.hentry {
-			margin 			: 0 0 1.5em;
-			display 		: inline-block;
-			margin-right 	: 2%;
-			vertical-align 	: top;
-
-			@media only screen and (min-width: $bp__menu-button+1) {	
-				width 	: 48%;
-			}
-
-			@media only screen and (min-width: $bp__tablet) {	
-				width 	: 31.3%;
-			}
+			margin: 0 0 1.5em;
 		}
+	}
+
+	.soliloquy-container {
+		margin-bottom: 2.25em;
 	}
 
 }
