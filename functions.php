@@ -103,16 +103,16 @@ add_action( 'widgets_init', 'marti_and_liz_widgets_init' );
  */
 function marti_and_liz_scripts() {
 
-	wp_enqueue_style( 'marti-and-liz-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'marti-and-liz-style', get_stylesheet_uri(), array( 'dashicons' ) );
 
 	wp_enqueue_script( 'marti-and-liz-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'marti-and-liz-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	
+
 		wp_enqueue_script( 'comment-reply' );
-	
+
 	}
 
 }
@@ -128,11 +128,11 @@ add_action( 'wp_enqueue_scripts', 'marti_and_liz_scripts' );
  * Author URI:  http://wpgrafie.de/
  */
 function ds_enqueue_jquery_in_footer( &$scripts ) {
-	 
+
 	if ( ! is_admin() ) {
 
 		$scripts->add_data( 'jquery', 'group', 1 );
-	
+
 	}
 
 } // ds_enqueue_jquery_in_footer()
@@ -173,33 +173,6 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/**
- * Customize footer
- */
-function custom_footer_left() {
-
-	dynamic_sidebar( 'footer-left' );
-
-} // custom_footer_left()
-add_action( 'footer_left', 'custom_footer_left' );
-
-function custom_site_info() {
-
-	printf( __( '<div class="copyright">&copy %1$s <a href="%2$s" title="Login">Beaty Shoes</a></a></div>', 'marti-and-liz' ), date( 'Y' ), get_admin_url() );
-	echo '1151 Taylor Place<br />Jamestown, TN 38556<br />';
-	printf( __( '<a href="tel:%1$s">%1$s</a>' , 'marti-and-liz' ), '(931) 879-8476' );
-	printf( __( '<br /><a href="%1$s">Terms & Conditions</a>', 'marti-and-liz' ), get_site_url() . '/web-site-terms-conditions-use' );
-
-} // custom_site_info()
-add_action( 'site_info', 'custom_site_info' );
-
-function custom_footer_right() {
-
-	get_template_part( 'menu', 'social' );
-
-} // custom_footer_right()
-add_action( 'footer_right', 'custom_footer_right' );
-
 
 /**
  * Load Fonts
@@ -224,9 +197,9 @@ function pretty( $input ) {
 
 /**
  * Changes the text at the top of the SimpleMap Search Form
- * 
+ *
  * @param 	array 		$atts 		The current attribute array
- * 
+ *
  * @return 	array       			The modified attribute array
  */
 function change_search_text( $atts ) {
@@ -242,7 +215,7 @@ add_filter( 'sm-default-shortcode-atts', 'change_search_text', 10, 1 );
 
 /**
  * Changes the text on the search button
- * 
+ *
  * @return 	string       	The modified search button text
  */
 function change_button_text() {
@@ -256,7 +229,7 @@ add_filter( 'sm-search-label-search', 'change_button_text', 10 );
 
 /**
  * Changes the text on the Zip Code field label
- * 
+ *
  * @return 	string       	The modified text
  */
 function change_zip_text() {
@@ -270,9 +243,9 @@ add_filter( 'sm-search-label-zip', 'change_zip_text', 10 );
 
 /**
  * Removes everything from the pre-existing SimpleMap single location template
- * 
+ *
  * @param 	mixed 		$temp 		The current SimpleMap single location template
- * 
+ *
  * @return 	null
  */
 function blank_template( $temp ) {
@@ -287,9 +260,9 @@ add_filter( 'sm-single-location-default-template', 'blank_template', 10, 1 );
 
 /**
  * Removes description from Map Markers
- * 
+ *
  * @param 	mixed 		$temp 		The current SimpleMap single location template
- * 
+ *
  * @return 	null
  */
 function no_marker_description() {
@@ -306,11 +279,11 @@ add_filter( 'sm-hide-bubble-description', 'no_marker_description' );
 
 /**
  * Creates a Post category when a SimpleMap Location is published
- * 
+ *
  * @param 	int 		$post_id 		The ID of the post being published
  * @param 	obj 		$post 			The Post object
  * @param 	? 			$update 		No idea
- * 
+ *
  * @return 	void
  */
 function create_location_category( $post_id, $post, $update ) {
@@ -338,9 +311,9 @@ add_action( 'save_post', 'create_location_category', 10, 3 );
 
 /**
  * Removes a Post category when a SimpleMap Location is permanently deleted
- * 
+ *
  * @param 	int 		$postID 		The ID of the post being deleted
- * 
+ *
  * @return 	void
  */
 function remove_location_category( $postID ) {
@@ -376,7 +349,7 @@ function get_category_posts( $category, $quantity = 10, $paged = 1 ) {
 	$args['paged'] 			= $paged;
 	$args['posts_per_page'] = $quantity;
 	$args['post_type'] 		= 'post';
-	
+
 	$query = new WP_Query( $args );
 
 	return $query;
@@ -389,32 +362,32 @@ function get_category_posts( $category, $quantity = 10, $paged = 1 ) {
  * Echos the post slug
  *
  * @link http://www.tcbarrett.com/2011/09/wordpress-the_slug-get-post-slug-function/#.VF2EU1PF8qg
- * 
+ *
  * @param 	int 		$postID 		The post ID
  *
  * @uses 	get_the_slug()
- * 
+ *
  * @return 	string 						The slug of the post
  */
 function the_slug( $postID ) {
-	
+
 	$slug = get_the_slug( $postID );
 
 	echo $slug;
-	
+
 } // the_slug()
 
 /**
  * Returns the post slug
  *
  * @link http://www.tcbarrett.com/2011/09/wordpress-the_slug-get-post-slug-function/#.VF2EU1PF8qg
- * 
+ *
  * @param 	int 		$postID 		The post ID
  *
  * @uses 	get_permalink()
  * @uses 	do_action()
  * @uses 	apply_filters()
- * 
+ *
  * @return 	string 						The slug of the post
  */
 function get_the_slug( $postID ) {
@@ -424,9 +397,9 @@ function get_the_slug( $postID ) {
 	do_action( 'before_slug', $slug );
 
 	$slug = apply_filters( 'slug_filter', $slug );
-	
+
 	do_action( 'after_slug', $slug );
-	
+
 	return $slug;
 
 } // get_the_slug()
@@ -435,10 +408,10 @@ function get_the_slug( $postID ) {
 
 /**
  * Returns the URL of the featured image
- * 
+ *
  * @param 	int 		$postID 		The post ID
  * @param 	string 		$size 			The image size to return
- * 
+ *
  * @return 	string | bool 				The URL of the featured image, otherwise FALSE
  */
 function get_thumbnail_url( $postID, $size = 'thumbnail' ) {
@@ -452,7 +425,7 @@ function get_thumbnail_url( $postID, $size = 'thumbnail' ) {
 	$thumb_array = wp_get_attachment_image_src( $thumb_id, $size, true );
 
 	if ( empty( $thumb_array ) ) { return FALSE; }
-	
+
 	return $thumb_array[0];
 
 } // get_thumbnail_url()
@@ -469,7 +442,7 @@ function get_thumbnail_url( $postID, $size = 'thumbnail' ) {
  * @param 	object 		$item				//
  * @param 	int 		$depth 				//
  * @param 	array 		$args 				//
- * 
+ *
  * @return 	string 							modified menu
  */
 function martiandliz_menu_svgs( $item_output, $item, $depth, $args ) {
@@ -486,7 +459,7 @@ function martiandliz_menu_svgs( $item_output, $item, $depth, $args ) {
 
 	} else {
 
-		if ( $host !== parse_url( get_site_url(), PHP_URL_HOST ) ) { 
+		if ( $host !== parse_url( get_site_url(), PHP_URL_HOST ) ) {
 
 			$output .= get_svg_by_url( $item->url );
 
@@ -524,7 +497,7 @@ add_filter( 'walker_nav_menu_start_el', 'martiandliz_menu_svgs', 10, 4 );
  * @param 	object 		$item				//
  * @param 	int 		$depth 				//
  * @param 	array 		$args 				//
- * 
+ *
  * @return 	string 							modified menu
  */
 function martiandliz_menu_caret( $item_output, $item, $depth, $args ) {
@@ -533,7 +506,8 @@ function martiandliz_menu_caret( $item_output, $item, $depth, $args ) {
 
 	$output = '<a href="' . $item->url . '">';
 	$output .= $item->title;
-	$output .= '<span class="children">' . get_svg( 'caret-down' ) . '</span>';
+	$output .= '<span class="dashicons dashicons-arrow-down"></span>';
+	//$output .= '<span class="children">' . get_svg( 'caret-down' ) . '</span>';
 	$output .= '</a>';
 
 	return $output;
@@ -546,7 +520,7 @@ add_filter( 'walker_nav_menu_start_el', 'martiandliz_menu_caret', 10, 4 );
 
 /**
  * Gets the appropriate SVG based on a menu item class
- * 
+ *
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
@@ -569,7 +543,7 @@ function get_svg_by_class( $classes ) {
 
 /**
  * Gets the appropriate SVG based on a URL
- * 
+ *
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
@@ -597,7 +571,7 @@ function get_svg_by_class( $classes ) {
 
 /**
  * Gets the appropriate SVG based on a URL
- * 
+ *
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
@@ -624,9 +598,9 @@ function get_svg_by_url( $url ) {
 
 /**
  * Returns the requested SVG
- * 
+ *
  * @param 	string 		$icon 		The name of the icon to return
- * 
+ *
  * @return 	mixed 					The SVG code
  */
 function get_svg( $svg ) {
@@ -652,7 +626,7 @@ function get_svg( $svg ) {
 
 /**
  * Limits the length of the excerpts on the home page
- * 
+ *
  * @param  [type] $length [description]
  * @return [type]         [description]
  */
@@ -663,12 +637,72 @@ function home_excerpt_length( $length ) {
 		return 30;
 
 	}
- 
+
 } // new_excerpt_length()
 
 add_filter( 'excerpt_length', 'home_excerpt_length' );
 
 
+/**
+ * Adds the individual sections, settings, and controls to the theme customizer
+ */
+function martiandliz_customizer( $wp_customize ) {
 
+	$wp_customize->add_setting( 'promo_title' );
+	$wp_customize->add_control(
+		'core_business_2',
+		array(
+			'label'    => __( 'Promo Title', 'marti-and-liz' ),
+			'section'  => 'static_front_page',
+			'settings' => 'promo_title',
+		)
+	);
+
+	$wp_customize->add_setting( 'news_title' );
+	$wp_customize->add_control(
+		'core_business_2',
+		array(
+			'label'    => __( 'News Title', 'marti-and-liz' ),
+			'section'  => 'static_front_page',
+			'settings' => 'news_title',
+		)
+	);
+
+	$wp_customize->add_setting( 'promo_box_1' );
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control( $wp_customize, 'promo_box_1',
+			array(
+				'label'    => __( 'Promo Box 1', 'marti-and-liz' ),
+				'section'  => 'static_front_page',
+				'settings' => 'promo_box_1'
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'promo_box_2' );
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control( $wp_customize, 'promo_box_2',
+			array(
+				'label'    => __( 'Promo Box 2', 'marti-and-liz' ),
+				'section'  => 'static_front_page',
+				'settings' => 'promo_box_2'
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'promo_box_3' );
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control( $wp_customize, 'promo_box_3',
+			array(
+				'label'    => __( 'Promo Box 3', 'marti-and-liz' ),
+				'section'  => 'static_front_page',
+				'settings' => 'promo_box_3'
+			)
+		)
+	);
+
+} // kcrealty_customizer()
+
+// add_action( 'customize_register', 'martiandliz_customizer' );
 
 

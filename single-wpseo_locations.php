@@ -70,16 +70,15 @@ global $simple_map;
 					
 					}
 
-				?></div><!-- .store-map -->
+				?></div><!-- .store-map --><?php
 
-				<div class="store-news">
-					<h2>Store News</h2><?php
+				$store_posts = get_category_posts( '"' . get_the_slug( get_the_ID() ) . '"', 5 );
 
-					$store_posts = get_category_posts( '"' . get_the_slug( get_the_ID() ) . '"', 5 );
+				if ( 0 < $store_posts->found_posts ) :
 
-					if ( 0 < $store_posts->found_posts ) {
-
-						echo '<div class="posts_wrap">';
+					?><div class="store-news">
+						<h2>Store News</h2>
+						<div class="posts_wrap"><?php
 
 						while ( $store_posts->have_posts() ) : $store_posts->the_post();
 
@@ -89,19 +88,25 @@ global $simple_map;
 
 						wp_reset_postdata();
 
-						echo '</div><!-- .posts_wrap -->';
+						?></div><!-- .posts_wrap -->
+					</div><!-- .store-news --><?php
 
-					} // enpty check
+				endif;
 
-				?></div>
+				$thecontent = get_the_content();
 
-				<div class="store-photos">
-					<h2>Store Photos</h2><?php
+				if ( ! empty( $thecontent ) ) :
 
-					the_content();
+					?><div class="store-photos">
+						<h2>Store Photos</h2><?php
 
-				?></div>
-			</article><!-- #post-## --><?php
+						echo $thecontent;
+
+					?></div><?php
+
+				endif;
+			
+			?></article><!-- #post-## --><?php
 
 		endwhile; // end of the loop.
 

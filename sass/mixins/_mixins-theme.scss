@@ -22,3 +22,76 @@
 		overflow 		: auto;
 	}
 }
+
+
+%wordwrap {
+	word-break : break-word;
+	hyphens 	: auto;
+}
+
+%wpseo {
+
+	#wpseo-storelocator-results {
+		display: none;
+	}
+
+	.wpseo-map-canvas {
+		height: 500px !important;
+	}
+
+	#wpseo-storelocator-form {
+		padding 	: 1em;
+		width 		: 100%;
+		background 	: $color__bg-map-search;
+		color 		: $color__text-map-search;
+		text-align 	: center;
+
+		@media only screen and (max-width: $bp__menu-button) {
+			width 	: 100%;
+			bottom 	: 0;
+		}
+
+		label {
+			display 		: inline-block;
+			vertical-align 	: top;
+
+			@media only screen and (min-width: $bp__menu-button+1) {
+				width: 40%;
+			}
+		}
+
+
+		input[type="text"] {
+			width: 50%;
+		}
+
+		p {
+			display 		: inline-block;
+  			vertical-align 	: top;
+  			margin-bottom 	: 1em;
+  			width 			: 100%;
+
+  			@media only screen and (min-width: $bp__menu-button+1) {
+  				width 			: 75%;
+  				margin-bottom 	: 0;
+  			}
+		}
+	}
+
+	.sl-submit {
+
+		@media only screen and (min-width: $bp__menu-button+1) {
+			display 		: inline-block;
+			vertical-align 	: top;
+			width 			: 20% !important;
+		}
+
+		input[type="submit"] {
+			border 			: 2px solid white;
+			background 		: transparent;
+			box-shadow 		: none;
+			color 			: $color__text-map-search;
+			text-shadow 	: none;
+		}
+	}
+}

@@ -7,7 +7,7 @@
 		line-height 	: 1em;
 
 		a {
-			text-decoration : none; 
+			text-decoration : none;
 		}
 	}
 
@@ -18,6 +18,7 @@
 
 	.entry-content {
 		margin 	: 0;
+		@extend %wordwrap;
 	}
 }
 
@@ -40,7 +41,7 @@
 		float 	: left;
 
 		&.sidebar-content {
-			float 	: right;	
+			float 	: right;
 			margin 	: 0 0 0 2.5%;
 		}
 	}
@@ -53,111 +54,12 @@
 	@media only screen and (min-width: $bp__tablet) {
 		width: 27.5%;
 		float: right;
-	
+
 		&.sidebar-content {
-			float 	: left;	
+			float 	: left;
 			margin 	: 0 0 0 2.5%;
 		}
 	}
-}
-
-
-/**
- * Homepage Map
- */
-
-#simplemap {
-
-	@media only screen and (max-width: $bp__menu-button) {
-		height: 600px !important;
-	}
-}
-
-/* 
-.map_wrap {
-	position: relative;
-
-	#results {
-		padding-bottom: 149px;
-	}
-} */
-
-//form#location_search_form
-#map_search {
-	position: absolute;
-	z-index: 1;
-	bottom: 0;
-	overflow: auto;
-	padding: 1em;
-	background: $color__bg-map-search;
-	color: $color__text-map-search;
-	width: 100%;
-
-	@media only screen and (min-width: $bp__menu-button+1) {
-		width: 200px;
-		top: 0;
-		bottom: inherit;		
-	}
-
-	table {
-		margin-bottom: 0;
-	}
-
-	td {
-		padding-bottom: 12px;
-	}
-}
-
-.location_search_zip_cell {
-	//margin-bottom: 0.5em;
-	line-height: 28px;
-
-	br {
-		display: none;
-	}
-}
-
-#location_search_zip_field {
-	float: left;
-	width: 80%;
-	margin-right: 5%;
-}
-
-.location_search_cell {
-	float: left;
-	width: 100%;
-
-	input {
-		border: 0;
-		width: 100%;
-	}
-}
-
-.location_search_empty_cell,
-.location_search_street_cell,
-#location_search_0_tr,
-#location_search_2_tr {
-	display: none;
-
-	td {
-		padding-bottom: 0;
-	}
-}
-
-.location_search_submit_cell,
-.location_search_title {
-	text-align: center;
-}
-
-#location_search_submit_field {
-	border: 2px solid $color__border-input;
-	box-shadow: none;
-	background: none;
-	color: $color__text-map-search;
-	text-shadow: none;
-	font-weight: bold;
-	text-transform: uppercase;
-	width: 100px;
 }
 
 .telephone {
@@ -170,44 +72,6 @@
 	}
 }
 
-
-
-.wpseo-map-canvas {
-	height: 500px !important;
+.map_wrap {
+	@extend %wpseo;
 }
-
-#wpseo-storelocator-form {
-	padding 	: 1em;
-	width 		: 190px;
-	position 	: absolute;
-	z-index 	: 1;
-	background 	: $color__bg-map-search;
-	color 		: $color__text-map-search;
-	text-align 	: center;
-
-	@media only screen and (max-width: $bp__menu-button) {	
-		width 	: 100%;
-		bottom 	: 0;
-	}
-
-
-	input[type="text"] {
-		width: 100%;
-	}
-
-	p {
-		margin-bottom: 1em;
-	}
-}
-
-.sl-submit {
-
-	input[type="submit"] {
-		border 			: 2px solid white;
-		background 		: transparent;
-		box-shadow 		: none;
-		color 			: $color__text-map-search;
-		text-shadow 	: none;
-	}
-}
-

@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Home Page, no sidebar
- * 
+ *
  * Description: The home page with large map, news posts, and promo boxes.
  *
  * @package Marti & liz
@@ -24,7 +24,7 @@ get_header();
 
 				?></div><!-- .map_wrap -->
 				<div class="news_wrap">
-					<h2 class="news_title"><?php echo get_field( 'news_title' ); ?></h2><?php
+					<h2 class="news_title"><?php echo get_theme_mod( 'news_title' ); ?></h2><?php
 
 					$query = new WP_Query( array( 'posts_per_page' => 3 ) );
 
@@ -35,15 +35,15 @@ get_header();
 
 							?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<header class="entry-header"><?php
-									
+
 									the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
 
 								?></header><!-- .entry-header -->
-								
+
 								<div class="entry-summary"><?php
 
 									the_excerpt();
-								
+
 								?></div><!-- .entry-summary -->
 							</article><!-- #post-## --><?php
 
